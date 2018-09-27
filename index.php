@@ -15,12 +15,12 @@
       <tr>
         <td>
           <div id="navkanan">
-          <button onclick="window.location.href='masuk.php'" type="login" >Masuk</button>
+          <button onclick="window.location.href='login.php'" type="login" >Masuk</button>
           </div>
         </td>
         <td>
           <div id="navkiri">
-          <button onclick="window.location.href='daftar.php'" type="daftar">Daftar</button>
+          <button onclick="window.location.href='registrasi.php'" type="daftar">Daftar</button>
           </div>
         </td>
       </tr>
