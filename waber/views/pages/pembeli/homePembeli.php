@@ -97,7 +97,7 @@
 
 				?>
 
-<div class="col-md-4">
+			<div class="col-md-4">
 				<div class="d-inline-block">
 					<div class="card" style="width: 25rem;">
 						<img class="card-img-top" src="foto_produk/<?php echo $item['foto_produk'] ?>" alt="Card image cap">

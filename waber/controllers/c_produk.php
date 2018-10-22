@@ -14,13 +14,8 @@ Class ProdukController{
 
 	}
 	public function prosesCreateProduk(){
-		/*	echo "test";*/
-		/*var_dump($_POST);
-		exit;*/
 		$foto = $_FILES['foto_produk']['name'];
 		$tmp = $_FILES['foto_produk']['tmp_name'];
-		/*$cabang=$_POST['cabang'];*/
-
 // Rename nama fotonya dengan menambahkan tanggal dan jam upload
 		$fotobaru = date('dmYHis').$foto;
 // Set path folder tempat menyimpan fotonya
@@ -32,11 +27,6 @@ Class ProdukController{
 		}
 
 		header("location:index.php?controller=produk&action=showAllProdukPenjual");
-		//require_once("views/pages/createProduk.php");
-
-		//require_once("views/pages/penjual/inputProduk.php");
-
-
 	}
 	public function showAllProdukPenjual(){
 		if (isset($_SESSION['login_user'])) {
@@ -76,15 +66,8 @@ Class ProdukController{
 
 	public function detailProduk(){
 
-
-
 		$posts=Produk::showDetailProduk($_GET['id_produk']);
 		require_once('views/pages/detailProduk.php');
-
-
-
-
-
 	}
 
 
@@ -98,9 +81,6 @@ Class ProdukController{
 		else{
 			header('location:index.php?controller=login&action=login');
 		}
-
-
-
 	}
 }
 ?>

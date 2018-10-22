@@ -91,14 +91,7 @@ public static function bayarCart($id_user,$id_produk,$jumlah){
 
 	unset($_SESSION['id_produk']);
 	unset($_SESSION['jumlah']);
-/*
-		$kodeUnik=$db->query("SELECT * from tb_penjualan where id_user=$id_user order by id_penjualan DESC LIMIT 0,1");
-		foreach ($kodeUnik->fetchAll() as $post) {
-			//$id_penjualan=$post["id_penjualan"];
-			$unik=array('unik'=>$post["id_penjualan"]
 
-				);
-}*/
 return $insert2;
 }
 
@@ -110,20 +103,12 @@ public function detailTransaksiPembeli($id_penjualan){
 		JOIN produk p on dp.id_produk=p.id_produk
 		WHERE id_penjualan=$id_penjualan");
 
-/*	foreach ($req->fetchAll() as $post) {
-
-		$list[] = new Laporan("",$post['nama_produk'],"",$post['total_harga'],"",$post['tanggal'],"","","","",$post['jumlah']
-			);
-}*/
-
 foreach ($req as $item) {
 	$list[]=array(
 		'nama_produk'=>$item['nama_produk'],
 		'total_harga'=>$item['total_harga'],
 		'tanggal'=>$item['tanggal'],
 		'jumlahBeli'=>$item['jumlah']
-
-
 		);
 }
 
@@ -140,12 +125,6 @@ public function detailTransaksiAdmin($id_penjualan){
 
 		WHERE id_penjualan=$id_penjualan");
 
-/*	foreach ($req->fetchAll() as $post) {
-
-		$list[] = new Laporan("",$post['nama_produk'],"",$post['total_harga'],"",$post['tanggal'],"","","","",$post['jumlah']
-			);
-}*/
-
 foreach ($req as $item) {
 	$list[]=array(
 		'nama_produk'=>$item['nama_produk'],
@@ -153,8 +132,6 @@ foreach ($req as $item) {
 		'tanggal'=>$item['tanggal'],
 		'jumlahBeli'=>$item['jumlah'],
 		'penjual'=>$item['nama']
-
-
 		);
 }
 
@@ -174,12 +151,6 @@ public function transaksiPenjual(){
 		JOIN produk p on dp.id_produk=p.id_produk join users u ON p.id_user=u.id_user
 		WHERE p.id_user=".$_SESSION['id_user']);
 
-/*	foreach ($req->fetchAll() as $post) {
-
-		$list[] = new Laporan("",$post['nama_produk'],"",$post['total_harga'],"",$post['tanggal'],"","","","",$post['jumlah']
-			);
-}*/
-
 foreach ($req as $item) {
 	$list[]=array(
 		'nama_produk'=>$item['nama_produk'],
@@ -188,8 +159,6 @@ foreach ($req as $item) {
 		'jumlahBeli'=>$item['jumlah'],
 		'status'=>$item['status'],
 		'pembeli'=>$item['pembeli']
-
-
 		);
 }
 

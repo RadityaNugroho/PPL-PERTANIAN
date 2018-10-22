@@ -57,36 +57,54 @@
 
 					<div class="input-group">
 						<span class="input-group-addon" id="basic-addon1"></span>
-						<!-- <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1" name="password" required> -->
 						<input name="nama" type="text" class="form-control" placeholder="Masukkan Nama" aria-describedby="basic-addon1"
 						required>
 					</div>
 					<br>
 					<div class="input-group">
 						<span class="input-group-addon" id="basic-addon1"></span>
-						<!-- <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" name="username" required> -->
 						<input name="username" type="text" class="form-control" placeholder="Masukkan username" aria-describedby="basic-addon1"
 						required autofocus>
 					</div>
 					<br>
 					<div class="input-group">
 						<span class="input-group-addon" id="basic-addon1"></span>
-						<!-- <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1" name="password" required> -->
 						<input name="password" type="password" class="form-control" placeholder="Masukkan password" aria-describedby="basic-addon1"
 						required>
 					</div>
 
-					<br>					
+					<br>
+
 					<div class="input-group">
 						<span class="input-group-addon" id="basic-addon1"></span>
-						<!-- <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1" name="password" required> -->
 						<input name="email" type="text" class="form-control" placeholder="Masukkan email" aria-describedby="basic-addon1"
 						required>
 					</div>
 					<br>
+
 					<div class="input-group">
 						<span class="input-group-addon" id="basic-addon1"></span>
-						<!-- <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1" name="password" required> -->
+						<input name="alamat" type="text" class="form-control" placeholder="Masukkan alamat" aria-describedby="basic-addon1"
+						required>
+					</div>
+					<br>
+
+					<div class="input-group">
+						<span class="input-group-addon" id="basic-addon1"></span>
+						<input name="kecamatan" type="text" class="form-control" placeholder="Masukkan kecamtan" aria-describedby="basic-addon1"
+						required>
+					</div>
+					<br>
+
+					<div class="input-group">
+						<span class="input-group-addon" id="basic-addon1"></span>
+						<input name="kota" type="text" class="form-control" placeholder="Masukkan kota" aria-describedby="basic-addon1"
+						required>
+					</div>
+					<br>
+
+					<div class="input-group">
+						<span class="input-group-addon" id="basic-addon1"></span>
 						<input name="no_telepon" type="text" class="form-control" placeholder="Masukkan no telepon" aria-describedby="basic-addon1"
 						required>
 					</div>

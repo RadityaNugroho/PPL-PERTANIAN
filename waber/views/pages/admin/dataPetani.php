@@ -23,8 +23,8 @@
 				<ul class="nav navbar-nav">
 					<li><a href="?controller=home&action=homeAdmin">Home <span class="sr-only">(current)</span></a></li>
 					<li><a href="?controller=registerAdmin&action=register">Daftarkan Petani</a></li>
-					<li><a href="?controller=registerAdmin&action=tampilDataPetani">Data Petani</a></li>
-          			<li  class="active"><a href="?controller=keranjang&action=transaksiAdmin">Pembayaran</a></li>
+					<li class="active"><a>Data Petani</a></li>
+          			<li ><a href="?controller=keranjang&action=transaksiAdmin">Pembayaran</a></li>
 					<li><a >Harga Pasar</a></li>
 					
 				</ul>
@@ -50,13 +50,13 @@
 
 				<th>No</th>
 				<!-- <th>id produk</th> -->
-				<th>id Transaksi</th>
-				<th>nama pembeli</th>
-				<th>tanggal</th>
-				<th>status</th>
-				<th>action</th>
-
-
+				<th>Nama Petani</th>
+				<th>Username</th>
+				<th>Email</th>
+				<th>Alamat</th>
+				<th>Kecamatan</th>
+				<th>Kota</th>
+				<th>No Telepon</th>
 
 			</tr>
 
@@ -68,16 +68,13 @@
 			<tr>
 				<td><?php echo $no; ?></td>
 
-				<td><?php echo $item['id_penjualan']; ?></td>
-				<td><?php echo $item['pembeli']; ?></td>
-				<td><?php echo $item['tanggal']; ?></td>
-				<td><?php echo $item['status']; ?></td>
-				<td>
-				<a href="?controller=keranjang&action=editStatusTransaksi&id_penjualan=<?php echo $item['id_penjualan']; ?>"> <button class="btn btn-success"><span class="glyphicon glyphicon-ok"></span></button></a>
-					<a href="?controller=keranjang&action=detailTransaksiAdmin&id_penjualan=<?php echo $item['id_penjualan']; ?>"> <button class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span></button></a>
-
-				</td>
-
+				<td><?php echo $item['nama']; ?></td>
+				<td><?php echo $item['username']; ?></td>
+				<td><?php echo $item['email']; ?></td>
+				<td><?php echo $item['alamat']; ?></td>
+				<td><?php echo $item['kecamatan']; ?></td>
+				<td><?php echo $item['kota']; ?></td>
+				<td><?php echo $item['no_telepon']; ?></td>
 			</tr>
 			<?php
 			$no++;

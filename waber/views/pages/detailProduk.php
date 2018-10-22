@@ -47,11 +47,8 @@
 	</nav>
 
 	<div class="container">
-		<div class="pembatas"></div>
 
 		<div class="row">
-			<div class="col-md-3"></div>
-			<div class="col-md-6">
 
 				<?php foreach ($posts as $item) {
 
@@ -94,10 +91,23 @@
 						</div>
 					</p>
 				</div>
-
-
-
 				<?php } ?>
+<hr>
+				<label>Diskusi Produk</label>
+						<div class="input-group">
+							<!-- <span class="input-group-addon" id="basic-addon1"></span> -->
+							<!-- <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1" name="password" required> -->
+							<!-- <input name="deskripsi" type="text" class="form-control" placeholder="Masukkan deskripsi produk" aria-describedby="basic-addon1"
+							required value="<?php echo $item['deskripsi']; ?>"> -->
+
+							<textarea style="width:450px; height:100px;" name="deskripsi" type="text" class="form-control" placeholder="Masukkan Komentar produk disini" aria-describedby="basic-addon1"
+							required></textarea>
+
+						</div>
+						<p align="left">
+						<button type="submit" class="btn btn-success" style="margin-top:20px;">Submit</button>
+					</p>
+
 
 
 </body>

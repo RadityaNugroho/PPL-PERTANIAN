@@ -58,27 +58,4 @@ function call($controller, $action){
 
 call($controller,$action);
 
-/*$controllers = array('login' => ['login', 'error','authentication'],
-	'register'=>['register','createUser','error'],
-	'home'=>['home','homeAdmin','homePenjual','homePembeli'],
-
-	'produk'=>['createProduk','prosesCreateProduk','showAllProdukPenjual','editProduk','updateDataProduk','deleteDataProdukPenjual','editProdukCabang','editDataProdukCabang','deleteDataProdukCabang'],
-	'laporan'=>['laporanAdminCabang','laporanTransaksiCabang','editStatusTransaksiCabang','detailTransaksiCabang'],
-	'keranjang'=>['addCart','showCart','clearCart','bayarCart','kodeUnik']
-
-
-	);
-
-
-if (array_key_exists($controller, $controllers)) {
-	if (in_array($action, $controllers[$controller])) {
-		call($controller,$action);
-	} else {
-		call($controller,'error');
-	}
-
-} else {
-	call($controller,'error');
-}*/
-
 ?>

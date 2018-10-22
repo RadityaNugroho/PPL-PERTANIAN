@@ -36,17 +36,13 @@
 					<li><a href="?controller=keranjang&action=transaksiPenjual">Pesanan</a></li>
 
 				</ul>
-				<form class="navbar-form navbar-left">
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Search">
-					</div>
-					<button type="submit" class="btn btn-default">Submit</button>
-				</form>
+				
 				<ul class="nav navbar-nav navbar-right">
 
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['nama_user']; ?> <span class="caret"></span></a>
 						<ul class="dropdown-menu">
+							<li><a href="?controller=registerAdmin&action=tampilDataUser">Akun</a></li>
 							<li><a href="logout.php">Logout</a></li>
 							<!-- <li><a href="?controller=register&action=register">Register</a></li> -->
 
@@ -74,29 +70,29 @@
 						<div class="input-group">
 
 							<!-- <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1" name="password" required> -->
-
+							<span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-leaf"></i></span>
 							<input name="nama_produk" type="text" class="form-control" placeholder="Masukkan nama produk" aria-describedby="basic-addon1"
 							required autofocus>
-							<span class="input-group-addon" id="basic-addon1"></span>
+							
 						</div>
 						<br>
-						<label>Jumlah produk</label>
-						<div class="input-group">
-
-							<!-- <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" name="username" required> -->
-							<input min="1" name="jumlah_stok" type="number" class="form-control" placeholder="Masukkan jumlah stok" aria-describedby="basic-addon1"
-							required >
-							<span class="input-group-addon" id="basic-addon1">Kg</span>
-						</div>
-						<br>
-
 						<label>Harga produk</label>
 						<div class="input-group">
-							<span class="input-group-addon" id="basic-addon1">Rp</span>
-							<!-- <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1" name="password" required> -->
-							<input min="1" name="harga" type="number" class="form-control" placeholder="Masukkan harga" aria-describedby="basic-addon1"
+
+							<span class="input-group-addon" id="basic-addon1">Rp.</span>
+							<input min="1" name="jumlah_stok" type="number" class="form-control" placeholder="Masukkan Harga Produk" aria-describedby="basic-addon1"
 							required >
 							<span class="input-group-addon" id="basic-addon1">/Kg</span>
+						</div>
+						<br>
+
+						<label>Jumlah produk</label>
+						<div class="input-group">
+							
+							<!-- <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1" name="password" required> -->
+							<input min="1" name="harga" type="number" class="form-control" placeholder="Masukkan Jumlah Produk" aria-describedby="basic-addon1"
+							required >
+							<span class="input-group-addon" id="basic-addon1">Kg</span>
 						</div>
 
 						<br>
@@ -114,7 +110,7 @@
 
 					<br>
 					<div class="input-group">
-						<span class="input-group-addon" id="basic-addon1"></span>
+						<span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-camera"></i></span>
 						<!-- <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1" name="password" required> -->
 						<input name="foto_produk" type="file" class="form-control" aria-describedby="basic-addon1"
 						required>

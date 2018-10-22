@@ -112,10 +112,23 @@
 
 						<button type="submit" class="btn btn-primary" style="width:40%" type="submit">Masukkan ke keranjang</button>
 						<br><br><br>
+						<hr>
+
+						<label>Diskusi Produk</label>
+						<div class="input-group">
+							<textarea style="width:450px; height:100px;" name="deskripsi" type="text" class="form-control" placeholder="Masukkan Komentar produk disini" aria-describedby="basic-addon1"
+							required></textarea>
+
+						</div>
+						<p align="left">
+						<button type="submit" class="btn btn-success" style="margin-top:20px;">Submit</button>
+					</p>
 					</div>
 
 
 				</form>
+
+
 
 				<?php } ?>
 

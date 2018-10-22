@@ -2,6 +2,15 @@
 <html>
 <head>
 	<title></title>
+  <style type="text/css">
+    body{
+      background-color: #b3ffff;
+    }
+    #bg{
+      background-color: white;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 
 
@@ -25,18 +34,12 @@
 					<ul class="nav navbar-nav">
 					<li class="active"><a href="?controller=home&action=homeAdmin">Home <span class="sr-only">(current)</span></a></li>
 					<li><a href="?controller=registerAdmin&action=register">Daftarkan Petani</a></li>
-          <li><a>Data Petani</a></li>
+          <li><a href="?controller=registerAdmin&action=tampilDataPetani">Data Petani</a></li>
           <li><a href="?controller=keranjang&action=transaksiAdmin">Pembayaran</a></li>
 					<li><a >Harga Pasar</a></li>
-						 <!-- <li><a href="?controller=peramalan&action=tambahToko">Tambah Toko</a></li> -->
-					<!-- <li><a href="#">Cara Pemesanan</a></li> -->
+
 					</ul>
-				<!-- <form class="navbar-form navbar-left">
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Search">
-					</div>
-					<button type="submit" class="btn btn-default">Submit</button>
-				</form> -->
+
 				<ul class="nav navbar-nav navbar-right">
 
 					<li class="dropdown">
@@ -53,73 +56,10 @@
 		</div>
 	</nav>
 
-
-	<div class="row">
-
-      <div class="col-md-8">
-        <div class="row state-overview">
-
-        <?php foreach ($stat as $item){
-
-           ?>
-
-
-          <div class="col-lg-6 col-sm-6" >
-            <section class="panel" style="background-color: #242D3E;">
-            <div class="symbol terques">
-              <i class="fa fa-users"></i>
-            </div>
-            <div class="value" style="margin-left: 15px;">
-              <h1 class="count" style="color: white;"><?php echo $item['jumlahTerjual']." pcs"; ?></h1>
-              <p style="color: white;">produk yang Terjual</p>
-            </div>
-          </section>
-        </div>
-        <div class="col-lg-6 col-sm-6">
-          <section class="panel" style="background-color: #242D3E;">
-          <div class="symbol red">
-            <i class="fa fa-gift"></i>
-          </div>
-          <div class="value" style="margin-left: 15px;">
-            <h1 class="count2" style="color: white;"><?php echo $item['jumlah_stok']." pcs"; ?></h1>
-            <p style="color: white;">Stok produk</p>
-          </div>
-        </section>
-      </div>
-
-    <div class="col-lg-6 col-sm-6">
-      <section class="panel" style="background-color: #242D3E;">
-      <div class="symbol purple">
-        <i class="fa fa-money"></i>
-      </div>
-      <div class="value" style="margin-left: 15px;">
-        <h1 class="count4" style="color: white;"><?php echo $item['produkTerlaris']; ?></h1>
-        <p style="color: white;">produk Terlaris</p>
-      </div>
-    </section>
-  </div>
-  <?php } ?>
-  <div class="col-md-12">
-   <div class="panel-heading" style="background-color: #526485; border: none;">
-      <header class="panel-title">
-        <div class="text-center">
-          <strong style="color: white;">Quote of the Day</strong>
-        </div>
-      </header>
-    </div>
-   <section class="panel" style="border-radius: 0px 0px 7px 7px; background-color: #242D3E; padding-bottom: 85px;">
-   <div class="symbol purple">
-    <i class="fa fa-money"></i>
-  </div>
-  <div class="value" style="margin-left: 15px;">
-    <h1 class="count4" style="color: white;">Jangan lupa bersyukur hari ini...!</h1>
-
-  </div>
-</section>
-</div>
-</div>
-</div>
-<div class="col-md-4">
+<div class="container" id="bg1">
+  
+<div class="row">
+  <div class="col-md-4">
   <div class="panel panel-default" style="border:none; border-radius: 5px 5px 10px 10px;">
     <div class="panel-heading" style="background-color: #526485; border: none;">
       <header class="panel-title">
@@ -136,11 +76,37 @@
         <h3 style="color: white;">Admin</h3>
         <small class="label label-warning" style="color: white;"><?php echo $_SESSION['nama_user']; ?></small>
         <br><br><br><br>
-        <p style="color: white;">Selamat Datang Kembali , Selamat Bekerja Kembali</p>
+        <p style="color: white;">Hai Admincuu</p>
       </div>
     </div>
   </div>
 </div>
+
+
+<div class="col-md-7" id="bg">
+    <?php foreach ($stat as $item){
+
+           ?>
+              <label>Total Produk Petani Yang Terjual</label>
+              <h3 class="count" style="color: black;"><?php echo $item['jumlahTerjual']." Kilogram"; ?></h3>
+              <p style="color: black;">produk yang Terjual</p>
+              <hr>
+
+              <label>Total Stok Produk di WaBer.com</label>
+              <h3 class="count2" style="color: black;"><?php echo $item['jumlah_stok']." Kilogram"; ?></h3>
+              <hr>
+
+              <label>Produk Terlaris</label>
+              <h3 class="count4" style="color: black;"><?php echo $item['produkTerlaris']; ?></h3>
+<?php } ?>
+</div>
+
+</div>
+	
+</div>
+</div>
+</div>
+
 </div>
 
 

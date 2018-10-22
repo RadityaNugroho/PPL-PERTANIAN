@@ -2,15 +2,6 @@
 <html>
 <head>
 	<title></title>
-<style type="text/css">
-  body{
-    background-color: #b3ffff;
-  }
-  #bg{
-    background-color: white;
-    border-radius: 10px;
-  }
-</style>
 </head>
 
 
@@ -51,7 +42,7 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['nama_user']; ?> <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-              <li><a href="?controller=registerAdmin&action=tampilDataUser">Akun</a></li>
+              <li><a href="">Akun</a></li>
 							<li><a href="logout.php">Logout</a></li>
 							<!-- <li><a href="?controller=register&action=register">Register</a></li> -->
 
@@ -63,59 +54,53 @@
 		</div>
 	</nav>
 
-<div class="container" style="background-color: #b3ffff;">
-  <div class="row">
-    
-    <div class="col-md-4">
-  <div class="panel panel-default" style="border:none; border-radius: 5px 5px 10px 10px;">
-    <div class="panel-heading" style="background-color: #526485; border: none;">
-      <header class="panel-title">
-        <div class="text-center">
-          <strong style="color: white;">Profile</strong>
-        </div>
-      </header>
-    </div>
-    <div class="panel-body" style="background-color: #242D3E; border-radius: 0px 0px 10px 10px; border: none;">
-      <div class="text-center" id="author">
-        <br>
-        <img src="resources/img/petani.png" style="width: 190px; height: 180px;">
-        <br>
-        <h3 style="color: white;">Petani</h3>
-        <small class="label label-warning" style="color: white;"><?php echo $_SESSION['nama_user'];?></small>
-        <br><br>
-        <p><a href="?controller=registerAdmin&action=tampilDataUser" class="btn btn-primary" role="button">Detail Akun</a>
-        <br><br>
-        <p style="color: white;">Selamat Datang Petani</p>
-      </div>
-    </div>
-  </div>
-</div>
+  <div class="container">
+    <br><br><br>
+    <table class="table" style="margin-top: 30px;">
 
-    <div class="col-md-7" id="bg">
-      
-        <?php foreach ($stat as $item){
+      <tr>
 
-         ?>
-              <label>Total Produk Anda Yang Terjual</label>
-              <h3 class="count" style="color: black;"><?php echo $item['terjual']." Kilogram"; ?></h3>
-              <p style="color: black;">produk yang Terjual</p>
-              <hr>
+        <th>No</th>
+        <!-- <th>id produk</th> -->
+        <th>Nama Petani</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Alamat</th>
+        <th>Kecamatan</th>
+        <th>Kota</th>
+        <th>No Telepon</th>
 
-              <label>Total Stok Produk Anda</label>
-              <h3 class="count2" style="color: black;"><?php echo $item['jumlah_stok']." Kilogram"; ?></h3>
-              <hr>
+      </tr>
 
-              <label>Produk Yang Sering Dibeli Konsumen</label>
-              <h3 class="count4" style="color: black;"><?php echo $item['nama_produk']; ?></h3>
+      <?php
+      $no=1;
+      foreach ($posts as $item) { ?>
 
-            <?php } ?>
-    </div>
 
-  </div>
-</div>
-	
+      <tr>
+        <td><?php echo $no; ?></td>
+
+        <td><?php echo $item['nama']; ?></td>
+        <td><?php echo $item['username']; ?></td>
+        <td><?php echo $item['email']; ?></td>
+        <td><?php echo $item['alamat']; ?></td>
+        <td><?php echo $item['kecamatan']; ?></td>
+        <td><?php echo $item['kota']; ?></td>
+        <td><?php echo $item['no_telepon']; ?></td>
+      </tr>
+      <?php
+      $no++;
+    }
+
+    ?>
+
+
+  </table>
+
 
 </div>
+
+
 
 
 

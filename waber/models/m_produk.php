@@ -2,27 +2,11 @@
 
 Class Produk{
 
-
-/*	public $id_produk;
-	public $nama_produk;
-	public $id_user;
-	public $jumlah_stok;
-	public $harga;
-	public $foto_produk;
-	public $deskripsi;*/
-
-
-	function __construct(/*$id_produk,$nama_produk,$id_user,$jumlah_stok,$harga,$foto_produk,$deskripsi*/)
+	function __construct()
 	{
-		/*$this->id_produk=$id_produk;
-		$this->nama_produk=$nama_produk;
-		$this->id_user=$id_user;
-		$this->jumlah_stok=$jumlah_stok;
-		$this->harga=$harga;
-		$this->foto_produk=$foto_produk;
-		$this->deskripsi=$deskripsi;*/
 
 	}
+	
 	public static function showAllProduk(){
 		$list=[];
 
@@ -31,12 +15,6 @@ Class Produk{
 		$req = $db->query("SELECT *
 			FROM produk p join users u
 			ON p.id_user=u.id_user");
-
-	/*	foreach ($req->fetchAll() as $post) {
-			$list[] = new Produk($post['id_produk'],$post['nama_produk'],$post['id_user']
-				,$post['jumlah_stok'],$post['harga'],$post['foto_produk'],$post['deskripsi']
-				);
-}*/
 
 foreach ($req as $item) {
 	$list[]=array(
@@ -68,12 +46,6 @@ public static function showDetailProduk($id_produk){
 	$req = $db->query("SELECT *
 		FROM produk p join users u
 		ON p.id_user=u.id_user where p.id_produk=".$id_produk);
-
-	/*	foreach ($req->fetchAll() as $post) {
-			$list[] = new Produk($post['id_produk'],$post['nama_produk'],$post['id_user']
-				,$post['jumlah_stok'],$post['harga'],$post['foto_produk'],$post['deskripsi']
-				);
-}*/
 
 foreach ($req as $item) {
 	$list[]=array(
@@ -123,14 +95,6 @@ public static function showAllProdukPenjual($id_user){
 		return null;
 	}
 
-	/*	foreach ($req->fetchAll() as $post) {
-			$list[] = new Produk($post['id_produk'],$post['nama_produk'],$post['id_user']
-				,$post['jumlah_stok'],$post['harga'],$post['foto_produk'],$post['deskripsi']
-				);
-		}
-
-
-		return $list;*/
 	}
 
 	public static function createProduk($nama_produk,$harga,$jumlah_stok,$foto_produk,$deskripsi){
@@ -169,16 +133,8 @@ public static function showAllProdukPenjual($id_user){
 		} else {
 			return null;
 		}
-
-	/*	foreach ($req->fetchAll() as $post) {
-			$list[] = new Produk($post['id_produk'],$post['nama_produk'],$post['id_user']
-				,$post['jumlah_stok'],$post['harga'],$post['foto_produk'],$post['deskripsi']
-				);
-		}
-
-
-		return $list;*/
 	}
+
 	public static function updateDataProduk($id_produk,$nama_produk,$harga,$jumlah_stok,$deskripsi){
 		$db = DB::getInstance();
 
