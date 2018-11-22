@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>detail produk</title>
+
+</head>
+<body class="">
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.php">WarungBeras.com</a>
+			</div>
+
+
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
+
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+
+      				<li><a href="index.php/register/register"><span class="glyphicon glyphicon-user"></span> Daftar</a></li>
+      				<li><a href="index.php/login/login"><span class="glyphicon glyphicon-log-in"></span> Masuk</a></li>
+    				</ul>
+			
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+
+		<div class="row">
+
+				<?php foreach ($posts as $item) {
+
+					?>
+					<h2><?php echo $item['nama_produk'] ?></h2>
+					<div class="card" style="width: 50rem; height:auto; margin-bottom:30px;">
+						<img class="card-img-top" src="foto_produk/<?php echo $item['foto_produk'] ?>" alt="Card image cap">
+						<div class="card-block">
+							<!-- <h2 class="card-title"><?php echo $item['nama_produk'] ?></h2> -->
+							<p class="card-text">
+								<font size="4" color="#2196F3"><b><p> <?php echo "Rp ". number_format($item['harga'],0,".",".")."/kg"; ?></p></b></font>
+
+
+							</p>
+							<p class="card-text">
+
+								Stok :<b> <?php echo $item['jumlah_stok']." "; ?>kg</b> <br>
+								Oleh : <b><?php echo $item['penjual']; ?></b>
+							</p>
+
+						</div>
+					</div>
+
+
+
+
+
+					<p><h2>Deksripsi</h2><p align="justify">
+						<div class="card" style="width: 50rem; height:auto; margin-bottom:30px;">
+
+							<div class="card-block">
+
+
+								<p class="card-text">
+
+									<?php echo $item['deskripsi']; ?>
+								</p>
+
+							</div>
+						</div>
+					</p>
+				</div>
+				<?php } ?>
+<hr>
+				<label>Diskusi Produk</label>
+						<div class="input-group">
+							<!-- <span class="input-group-addon" id="basic-addon1"></span> -->
+							<!-- <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1" name="password" required> -->
+							<!-- <input name="deskripsi" type="text" class="form-control" placeholder="Masukkan deskripsi produk" aria-describedby="basic-addon1"
+							required value="<?php echo $item['deskripsi']; ?>"> -->
+
+							<textarea style="width:450px; height:100px;" name="deskripsi" type="text" class="form-control" placeholder="Masukkan Komentar produk disini" aria-describedby="basic-addon1"
+							required></textarea>
+
+						</div>
+						<p align="left">
+						<button type="submit" class="btn btn-success" style="margin-top:20px;">Submit</button>
+					</p>
+
+
+
+</body>
+</html>
