@@ -128,13 +128,17 @@ public function transaksiPenjual(){
 	$list=[];
 	$db = DB::getInstance();
 
-	$req = $db->query("SELECT p.nama_produk,dp.jumlah,dp.total_harga,dp.tanggal,
+	$req = $db->query("SELECT p.nama_produk,dp.jumlah,dp.total_harga,dp.tanggal,dp.id_penjualan,
 		(SELECT status FROM tb_penjualan WHERE id_penjualan=dp.id_penjualan) as status,
-		(SELECT u.nama FROM tb_penjualan o JOIN users u ON o.id_user=u.id_user WHERE id_penjualan=dp.id_penjualan) as pembeli
+		(SELECT u.nama FROM tb_penjualan o JOIN users u ON o.id_user=u.id_user WHERE id_penjualan=dp.id_penjualan) as pembeli,
+		(SELECT u.alamat FROM tb_penjualan o JOIN users u ON o.id_user=u.id_user WHERE id_penjualan=dp.id_penjualan) as alamat,
+		(SELECT u.kecamatan FROM tb_penjualan o JOIN users u ON o.id_user=u.id_user WHERE id_penjualan=dp.id_penjualan) as kecamatan,
+		(SELECT u.kota FROM tb_penjualan o JOIN users u ON o.id_user=u.id_user WHERE id_penjualan=dp.id_penjualan) as kota
 		
 		FROM detail_penjualan dp
-		JOIN produk p on dp.id_produk=p.id_produk join users u ON p.id_user=u.id_user
-		WHERE p.id_user=".$_SESSION['id_user']);
+		JOIN produk p on dp.id_produk=p.id_produk join users u ON p.id_user=u.id_user join tb_penjualan tb on
+		dp.id_penjualan=tb.id_penjualan
+		WHERE tb.status='Terverifikasi' AND p.id_user=".$_SESSION['id_user']);
 
 foreach ($req as $item) {
 	$list[]=array(
@@ -143,7 +147,11 @@ foreach ($req as $item) {
 		'tanggal'=>$item['tanggal'],
 		'jumlahBeli'=>$item['jumlah'],
 		'status'=>$item['status'],
-		'pembeli'=>$item['pembeli']
+		'pembeli'=>$item['pembeli'],
+		'alamat'=>$item['alamat'],
+		'kecamatan'=>$item['kecamatan'],
+		'kota'=>$item['kota'],
+		'id_penjualan'=>$item['id_penjualan']
 		);
 }
 
@@ -166,9 +174,16 @@ foreach ($req as $item) {
 		'status'=>$item['status'],
 		);
 }
-
-
 return $list;
+}
+
+public function tampilBukti($id_penjualan){
+	$list=[];
+	$db = DB::getInstance();
+
+	$req = $db->query("SELECT bukti_transfer from tb_penjualan where id_penjualan='$id_penjualan'");
+
+	return $req;
 }
 
 public function editStatusTransaksi($id_penjualan){
@@ -197,9 +212,18 @@ public function editStatusTransaksi($id_penjualan){
 					");
 			}
 		}
+		// $ins = $db->query("INSERT INTO notifikasi VALUES(NULL,)")
+
 		$req = $db->query("UPDATE tb_penjualan set status='Terverifikasi' where id_penjualan='$id_penjualan'
 			");
 		return $req4;
+	}
+
+	public function editPengiriman($id_penjualan){
+		$db = DB::getInstance();
+		$req = $db->query("UPDATE tb_penjualan set status='Dalam Pengiriman' where id_penjualan=".$id_penjualan
+			);
+		return $req;
 	}
 
 public function editTransaksi($alamat,$kecamatan,$kota){

@@ -55,9 +55,9 @@
 				<th>nama pembeli</th>
 				<th>tanggal</th>
 				<th>status</th>
-				<th>action</th>
-
-
+				<th>Pembayaran</th>
+				<th>Detail Transaksi</th>
+				<th>Bukti Pembayaran</th>
 
 			</tr>
 
@@ -75,9 +75,14 @@
 				<td><?php echo $item['status']; ?></td>
 				<td>
 				<a href="?controller=keranjang&action=editStatusTransaksi&id_penjualan=<?php echo $item['id_penjualan']; ?>"> <button class="btn btn-success"><span class="glyphicon glyphicon-ok"></span></button></a>
-					<a href="?controller=keranjang&action=detailTransaksiAdmin&id_penjualan=<?php echo $item['id_penjualan']; ?>"> <button class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span></button></a>
-
 				</td>
+				<td>
+					<a href="?controller=keranjang&action=detailTransaksiAdmin&id_penjualan=<?php echo $item['id_penjualan']; ?>"> <button class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span></button></a>
+				</td>
+				<td>
+					<a href="?controller=keranjang&action=tampilBukti&id_penjualan=<?php echo $item['id_penjualan']; ?>"> <button class="btn btn-primary"><span class="glyphicon glyphicon-list-alt"></span></button></a>
+				</td>
+				
 
 			</tr>
 			<?php

@@ -5,6 +5,39 @@
 	
 </head>
 <body class="body-custom">
+	<!-- =========================== -->
+	<div class="bgded" style="background-image:url('resources/img/fild.jpg');">
+
+  <div class="wrapper overlay">
+    <header id="header" class="hoc clear">
+      <nav id="mainav" class="clear">
+
+        <ul class="clear">
+         	<li><a href="?controller=home&action=homePembeli">Beranda</a></li>
+         	<li><a href="?controller=home&action=homePembeli">Product</a></li>
+          	<li><a class="drop" href="#">Tentang Kami</a>
+        <ul>
+              <li><a href="#">Sejarah</a></li>
+              <li><a class="drop" href="#">Nama Anggota</a>
+                <ul>
+                  <li><a href="#">1. Raditya Mulya Nugroho</a></li>
+                  <li><a href="#">2. Muhammad Rizal Khisyam A</a></li>
+                  <li><a href="#">3. Agustina Tri Andara</a></li>
+                  <li><a href="#">4. Putri Kharisma Dwi Cahya</a></li>
+                  <li><a href="#">5. Restu Rohmatika</a></li>
+
+          </li>
+
+        </ul>
+      </nav>
+      <div id="logo">
+
+        <h1>Warung Beras</h1>
+
+      </div>
+    </header>
+  </div>
+
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<!-- Brand and toggle get grouped for better mobile display -->
@@ -15,40 +48,36 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" >WarungBeras.com</a>
+				<a class="navbar-brand">WarungBeras.com</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="?controller=home&action=homePembeli">Home <span class="sr-only">(current)</span></a></li>
-					<!-- <li><a href="komoditas.html">Daftar Komoditas</a></li>
-					<li><a href="#">Cara Pemesanan</a></li> -->
+					<li class="active"><a href="?controller=home&action=homePembeli">Home <span class="sr-only">(current)</span></a></li>
 
-					<li><a href="?controller=keranjang&action=showCart">Keranjang</a></li>
-					<li><a href="?controller=home&action=showTransaksiPembeli">Transaksi</a></li>
-
-				</ul>
-				<!-- <form class="navbar-form navbar-left">
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Search">
-					</div>
-					<button type="submit" class="btn btn-default">Submit</button>
-				</form> -->
-				<ul class="nav navbar-nav navbar-right">
+					<!-- <li><a href="?controller=keranjang&action=showCart">Keranjang</a></li> -->
+					<!-- <li><a href="?controller=home&action=showTransaksiPembeli">Transaksi</a></li> -->
+					<!-- <li><a href="?controller=home&action=pembayaran">Tes</a></li> -->
 					
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="?controller=keranjang&action=showCart"><i class="glyphicon glyphicon-shopping-cart"></i></a></li>
+					<li><a href=""><i class="glyphicon glyphicon-envelope"></i></a></li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['nama_user']; ?> <span class="caret"></span></a>
 						<ul class="dropdown-menu">
+							<li><a href="?controller=registerAdmin&action=tampilDataPembeli">Akun</a></li>
+							<li><a href="?controller=home&action=showTransaksiPembeli">Pesanan</a></li>
 							<li><a href="logout.php">Logout</a></li>
-							<!-- <li><a href="?controller=register&action=register">Register</a></li> -->
-
 						</ul>
 					</li>
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
 	</nav>
+<!-- =========================== -->
 
 	<div class="container">
 		<div class="pembatas"></div>
@@ -111,7 +140,7 @@
 						<hr>
 
 						</form>
-						<form method="POST">
+<!-- 						<form method="POST">
 						<input type="hidden" name="controller" value="registerAdmin">
           				<input type="hidden" name="action" value="inputKomen">
 						<label>Diskusi Produk</label>
@@ -122,7 +151,7 @@
 						<p align="left">
 						<button type="submit" class="btn btn-success" style="margin-top:20px;">Submit</button>
 						</p>
-						</form>
+						</form> -->
 
 					</div>
 				<?php } ?>

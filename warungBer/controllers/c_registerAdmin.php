@@ -36,6 +36,12 @@
 		}
 	}
 
+	public function detailPetani(){
+		$posts=RegisterAdmin::tampilPetani($_GET['id_user']);
+			require_once("views/pages/admin/saldoPetani.php");
+		}
+	
+
 	public function tampilDataUser(){
 
 		if (isset($_SESSION['login_user'])) {
@@ -101,6 +107,21 @@
 
 	public function inputKomen(){
 		$komen=RegisterAdmin::Komen($_GET['id_produk'],$_SESSION['id_user'],$_POST['diskusi']);
+	}
+
+	public function inputNotif(){
+		$posts=RegisterAdmin::tampilPetani($_GET['id_user']);
+			require_once("views/pages/admin/notif.php");
+	}
+
+	public function notifikasi(){
+		$posts = RegisterAdmin::notifikasi($_GET['id_user'],$_POST['subject'],$_POST['notifikasi']);
+		header("location:index.php?controller=registerAdmin&action=tampilDataPetani");
+	}
+
+	public function saldoPetani(){
+		$posts = RegisterAdmin::saldoPetani($_GET['id_user'],$_POST['saldo']);
+		header("location:index.php?controller=registerAdmin&action=tampilDataPetani");
 	}
 }
 ?>

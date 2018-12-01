@@ -39,6 +39,15 @@ class RegisterAdmin
 
 		return $req;
 	}
+
+	public static function tampilPetani($id_user){
+		$db = DB::getInstance();
+		$req = $db->query("SELECT nama from users where id_user =".$id_user);
+
+		return $req;
+	}
+
+
 	public static function tampilUser(){
 		$db = DB::getInstance();
 		$tes = $_SESSION["id_user"];
@@ -114,6 +123,20 @@ public static function tampilHargaPasar(){
 public function Komen($id_produk,$id_user,$diskusi){
 	$db = DB::getInstance();
 	$req = $db->query("INSERT into diskusi VALUES(NULL,'".$id_produk."','".$id_user."','".$diskusi."')");
+
+	return $req;
+}
+
+public function notifikasi($id_user,$subject,$notifikasi){
+	$db = DB::getInstance();
+	$req = $db->query("INSERT INTO notifikasi VALUES(NULL,'".$id_user."','".$subject."','".$notifikasi."')");
+
+	return $req;
+}
+
+public function saldoPetani($id_user, $saldo){
+	$db = DB::getInstance();
+	$req = $db->query("INSERT INTO saldo VALUES(NULL,'".$id_user."',curdate(),'".$saldo."')");
 
 	return $req;
 }

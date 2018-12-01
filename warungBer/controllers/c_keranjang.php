@@ -85,6 +85,11 @@ public function editStatusTransaksi(){
 	header("location:index.php?controller=keranjang&action=transaksiAdmin");
 }
 
+public function editPengiriman(){
+	$posts=Keranjang::editPengiriman($_GET['id_penjualan']);
+	header("location:index.php?controller=keranjang&action=transaksiPenjual");
+}
+
 public function editAlamat(){
 	$post=Keranjang::editTransaksi($_POST['alamat'],$_POST['kecamatan'],$_POST['kota']);
 	header("location:index.php?controller=home&action=showTransaksiPembeli");
@@ -111,6 +116,12 @@ public function editBukti(){
 			$post=Keranjang::addBukti($_GET['id_penjualan'], $bukti_transfer);
 		}
 		header("location:index.php?controller=home&action=showTransaksiPembeli");
+}
+
+public function tampilBukti(){
+
+	$posts=Keranjang::tampilBukti($_GET['id_penjualan']);
+	require_once("views/pages/admin/buktiBayar.php");
 }
 }
 

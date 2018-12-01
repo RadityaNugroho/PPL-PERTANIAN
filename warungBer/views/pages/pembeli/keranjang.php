@@ -7,6 +7,38 @@
 	
 </head>
 <body class="body-custom">
+<!-- =========================== -->
+	<div class="bgded" style="background-image:url('resources/img/fild.jpg');">
+
+  <div class="wrapper overlay">
+    <header id="header" class="hoc clear">
+      <nav id="mainav" class="clear">
+
+        <ul class="clear">
+         	<li><a href="?controller=home&action=homePembeli">Beranda</a></li>
+         	<li><a href="?controller=home&action=homePembeli">Product</a></li>
+          	<li><a class="drop" href="#">Tentang Kami</a>
+        <ul>
+              <li><a href="#">Sejarah</a></li>
+              <li><a class="drop" href="#">Nama Anggota</a>
+                <ul>
+                  <li><a href="#">1. Raditya Mulya Nugroho</a></li>
+                  <li><a href="#">2. Muhammad Rizal Khisyam A</a></li>
+                  <li><a href="#">3. Agustina Tri Andara</a></li>
+                  <li><a href="#">4. Putri Kharisma Dwi Cahya</a></li>
+                  <li><a href="#">5. Restu Rohmatika</a></li>
+
+          </li>
+
+        </ul>
+      </nav>
+      <div id="logo">
+
+        <h1>Warung Beras</h1>
+
+      </div>
+    </header>
+  </div>
 
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
@@ -18,51 +50,44 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" >WarungBeras.com</a>
+				<a class="navbar-brand">WarungBeras.com</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="?controller=home&action=homePembeli">Home <span class="sr-only">(current)</span></a></li>
-					<!-- <li><a href="komoditas.html">Daftar Komoditas</a></li>
-					<li><a href="#">Cara Pemesanan</a></li> -->
+					<li class="active"><a href="?controller=home&action=homePembeli">Home <span class="sr-only">(current)</span></a></li>
 
-					<li class="active"><a href="?controller=keranjang&action=showCart">Keranjang</a></li>
-					<li><a href="?controller=home&action=showTransaksiPembeli">Transaksi</a></li>
-
-				</ul>
-				<!-- <form class="navbar-form navbar-left">
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Search">
-					</div>
-					<button type="submit" class="btn btn-default">Submit</button>
-				</form> -->
-				<ul class="nav navbar-nav navbar-right">
+					<!-- <li><a href="?controller=keranjang&action=showCart">Keranjang</a></li> -->
+					<!-- <li><a href="?controller=home&action=showTransaksiPembeli">Transaksi</a></li> -->
+					<!-- <li><a href="?controller=home&action=pembayaran">Tes</a></li> -->
 					
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="?controller=keranjang&action=showCart"><i class="glyphicon glyphicon-shopping-cart"></i></a></li>
+					<li><a href=""><i class="glyphicon glyphicon-envelope"></i></a></li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['nama_user']; ?> <span class="caret"></span></a>
 						<ul class="dropdown-menu">
+							<li><a href="?controller=registerAdmin&action=tampilDataPembeli">Akun</a></li>
+							<li><a href="?controller=home&action=showTransaksiPembeli">Pesanan</a></li>
 							<li><a href="logout.php">Logout</a></li>
-							<!-- <li><a href="?controller=register&action=register">Register</a></li> -->
-
 						</ul>
 					</li>
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
 	</nav>
+<!-- =========================== -->
 
-	<div class="pembatas"></div>
 	<div class="container">
-		<br><br><br>
 		<h1>Keranjang Belanjaan</h1>
 		<table class="table" style="margin-top: 30px;">
 
 			<tr>
 
 				<th>No</th>
-				<!-- <th>id produk</th> -->
 				<th>nama produk</th>
 				<th>penjual</th>
 				<th>jumlah</th>
@@ -112,7 +137,7 @@
 				<h3>Total Bayar	: <?php echo "Rp ". number_format($totalBayar,0,".","."); ?> </h3>
 			</font>
 			<div class="col-md-6"><a href="?controller=keranjang&action=bayarCart"><button class="btn btn-primary" style="width:100%">Bayar</button></a></div>
-			<div class="col-md-6"><a href="?controller=keranjang&action=clearCart"><button  class="btn btn-danger" style="width:100%" >Batal</button></a></div>
+			<div class="col-md-6"><a href="?controller=keranjang&action=clearCart"><button  class="btn btn-danger" style="width:100%" >Hapus</button></a></div>
 
 		</div>
 

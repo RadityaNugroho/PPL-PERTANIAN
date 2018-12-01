@@ -46,74 +46,14 @@
 			</div>
 		</div>
 	</nav>
-	<div class="pembatas"></div>
 	<div class="container">
-		<br><br><br>
-		<h1>Detail Transaksi</h1>
-		<table class="table" style="margin-top: 30px;">
-
-			<tr>
-
-				<th>No</th>
-				<!-- <th>id produk</th> -->
-				<th>nama produk</th>
-				<th>nama penjual</th>
-				<!-- <th>penjual</th> -->
-				<th>jumlah</th>
-				<th>total harga</th>
-
-			</tr>
-
-			<?php
-			$no=1;
-			$i=0;
-
-			$totalBayar=0;
-
-
-			foreach ($posts as $item) {
-
-					$jumlahBeli=$item['jumlahBeli'];
-					$totalHarga=$item['total_harga'];
-
-
-					?>
-					<tr>
-						<td><?php echo $no; ?></td>
-						<!-- <td><?php echo $post->id_produk; ?></td> -->
-						<td><?php echo $item['nama_produk']; ?></td>
-						<td><?php echo $item['penjual']; ?></td>
-						<td><?php echo $item['jumlahBeli']." Kg" ?></td>
-						<td><?php echo "Rp ". number_format($totalHarga,0,".","."); ?></td>
-
-					</tr>
-					<?php
-					$no++;
-					$i++;
-					$totalBayar+=$totalHarga;
-				}
-
-
-				?>
-
-
-			</table>
-			<div>
-				<div class="col-md-8">
-
-				</div>
-				<div class="col-md-4"><font color="blue" >
-					<h3>Total Bayar	: <?php echo "Rp ". number_format($totalBayar,0,".","."); ?> </h3>
-				</font>
-
-
-			</div>
-
-
+		<?php foreach ($posts as $item){?>
+		<div class="card">
+			<img src="bukti_transfer/<?php echo $item['bukti_transfer'] ?>">
 		</div>
-
+		<?php } ?>
 	</div>
-	<br><br><br>
+	
 
 </body>
 </html>

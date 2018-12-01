@@ -38,6 +38,7 @@
           <li><a href="?controller=registerAdmin&action=tampilProduk">Produk Petani</a></li>
           <li><a href="?controller=keranjang&action=transaksiAdmin">Pembayaran</a></li>
 					<li><a href="?controller=registerAdmin&action=tampilHargaP">Harga Pasar</a></li>
+          <li><a href="#">Saldo Petani</a></li>
 
 					</ul>
 

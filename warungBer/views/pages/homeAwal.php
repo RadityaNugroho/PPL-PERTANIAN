@@ -44,13 +44,14 @@
       </div>
       <footer>
         <ul class="nospace inline pushright">
-          <li><a class="btn inverse" href="#">Porttitor</a></li>
-          <li><a class="btn" href="#">Fringilla</a></li>
+<!--           <li><a class="btn inverse" href="#">Porttitor</a></li>
+          <li><a class="btn" href="#">Fringilla</a></li> -->
         </ul>
       </footer>
     </article>
 </div>
 </div>
+<marquee> HARGA PASAR </marquee>
 <!-- =============== -->
 <div class="wrapper row3">
   <main class="hoc container clear">
@@ -91,5 +92,13 @@
 			
 			</div>
 		</div>
+
+  <div class="wrapper row4">
+  <footer id="footer" class="hoc clear">
+
+  </footer>
+</div>
+
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 </body>
 </html>

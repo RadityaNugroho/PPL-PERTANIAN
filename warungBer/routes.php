@@ -31,24 +31,18 @@ function call($controller, $action){
 		$controller=new ProdukController();
 		break;
 
-		case 'laporan':
-		require_once('models/m_laporan.php');
-		$controller=new LaporanController();
-		break;
-
 		case 'keranjang':
 		require_once('models/m_home.php');
 		require_once('models/m_keranjang.php');
 		$controller=new KeranjangController();
 		break;
 
-		case 'peramalan':
-		require_once('models/m_home.php');
-		require_once('models/m_produk.php');
-		require_once('models/m_user.php');
-		require_once('models/m_keranjang.php');
-		$controller=new PeramalanController();
-		break;
+		// case 'harga':
+		// require_once('models/m_home.php');
+		// require_once('models/m_produk.php');
+		// require_once('models/m_user.php');
+		// require_once('models/m_keranjang.php');
+		// break;
 
 
 	}

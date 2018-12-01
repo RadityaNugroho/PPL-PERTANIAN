@@ -8,9 +8,6 @@ class Register
 	public $email;
 	public $no_telepon;
 
-
-
-
 	function __construct($nama,$username,$password,$email,$no_telepon,$alamat,$kecamatan,$kota)
 	{
 
@@ -32,8 +29,6 @@ class Register
 
 		return $req;
 	}
-
-
 }
 
 ?>

@@ -55,11 +55,11 @@
 						<div class="card-block">
 							<h4 class="card-title"><?php echo $item['nama_produk'] ?></h4>
 							<p class="card-text">
-								<font size="4" color="#2196F3"><b><p> <?php echo "Rp ". number_format($item['harga'],0,".",".")."/pcs"; ?></p></b></font>
+								<font size="4" color="#2196F3"><b><p> <?php echo "Rp ". number_format($item['harga'],0,".",".")."/Kg"; ?></p></b></font>
 							</p>
 							<p class="card-text">
 
-								Stok : <b><?php echo $item['jumlah_stok']." "; ?>pcs</b> <br>
+								Stok : <b><?php echo $item['jumlah_stok']." "; ?>Kg</b> <br>
 								Oleh : <b><?php echo $item['penjual']; ?></b>
 
 							</p>

@@ -41,8 +41,6 @@
 						<ul class="dropdown-menu">
 							<li><a href="?controller=registerAdmin&action=tampilDataUser">Akun</a></li>
 							<li><a href="logout.php">Logout</a></li>
-							<!-- <li><a href="?controller=register&action=register">Register</a></li> -->
-
 						</ul>
 					</li>
 
@@ -51,9 +49,18 @@
 		</div>
 	</nav>
 
-	<div class="pembatas"></div>
 	<div class="container">
-		<br><br><br>
+  <ul class="nav nav-pills nav-justified">
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Pesanan Masuk</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Dalam Pengiriman</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Pesanan Selesai</a>
+    </li>
+  </ul><br>
 		<h1>Order masuk</h1>
 		<table class="table" style="margin-top: 30px;">
 
@@ -66,6 +73,9 @@
 				<th>status</th>
 				<th>Tanggal</th>
 				<th>nama pembeli</th>
+				<th>Alamat Pengiriman</th>
+				<th>Kirim</th>
+
 
 			</tr>
 
@@ -90,6 +100,12 @@
 						<td><?php echo $item['status']; ?></td>
 						<td><?php echo $item['tanggal']; ?></td>
 						<td><?php echo $item['pembeli']; ?></td>
+						<td><?php echo $item['alamat']; ?>, Kota <?php echo $item['kota']; ?> Kecamatan 
+							<?php echo $item['kecamatan']; ?>
+						</td>
+						<td>
+							<a href="?controller=keranjang&action=editPengiriman&id_penjualan=<?php echo $item['id_penjualan']; ?>"> <button class="btn btn-success"><span class="glyphicon glyphicon-ok-sign"></span></button></a>
+						</td>
 
 					</tr>
 					<?php
