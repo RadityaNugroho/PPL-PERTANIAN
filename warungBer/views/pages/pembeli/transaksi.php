@@ -69,6 +69,7 @@
 						<ul class="dropdown-menu">
 							<li><a href="?controller=registerAdmin&action=tampilDataPembeli">Akun</a></li>
 							<li><a href="?controller=home&action=showTransaksiPembeli">Pesanan</a></li>
+							<li class="divider"></li>
 							<li><a href="logout.php">Logout</a></li>
 						</ul>
 					</li>
@@ -78,7 +79,19 @@
 	</nav>
 <!-- =========================== -->
 	<div class="container">
-		<br><br><br>
+	<div style="background-color: white;"> 
+	<ul class="nav nav-pills nav-justified">
+    <li class="nav-item">
+      <a class="nav-link" href="?controller=home&action=showTransaksiPembeli">Pesanan Masuk</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="?controller=home&action=showTransaksiDikirim">Dalam Pengiriman</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="?controller=home&action=showTransaksiSelesai">Pesanan Selesai</a>
+    </li>
+  </ul>
+</div><br>
 		<table class="table" style="margin-top: 30px;">
 
 			<tr>

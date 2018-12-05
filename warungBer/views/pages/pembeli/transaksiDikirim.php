@@ -3,7 +3,7 @@
 <head>
 	<title></title>
 </head>
-<body class="body-custom">
+<body>
 <!-- =========================== -->
 	<div class="bgded" style="background-image:url('resources/img/fild.jpg');">
 
@@ -78,15 +78,54 @@
 		</div><!-- /.container-fluid -->
 	</nav>
 <!-- =========================== -->
-
 	<div class="container">
-		<div class="row">
-			<div class="col-md-9" style="margin: auto; text-align: center;">
-				<br><br>
-				<h2>Pesana Berhasil Dibuat</h2>
-			</div>
-		</div>
+	<div style="background-color: white;"> 
+	<ul class="nav nav-pills nav-justified">
+    <li class="nav-item">
+      <a class="nav-link" href="?controller=home&action=showTransaksiPembeli">Pesanan Masuk</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="?controller=home&action=showTransaksiDikirim">Dalam Pengiriman</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="?controller=home&action=showTransaksiSelesai">Pesanan Selesai</a>
+    </li>
+  </ul>
+</div><br>
+		<table class="table" style="margin-top: 30px;">
+
+			<tr>
+
+				<th>No</th>
+				<th>id Transaksi</th>
+				<th>tanggal</th>
+				<th>status</th>
+				<th>action</th>
+			</tr>
+
+			<?php 
+			$no=1;
+			foreach ($posts as $item) { ?>
+			<tr>
+				<td><?php echo $no; ?></td>
+
+				<td><?php echo $item['id_penjualan']; ?></td>
+				<td><?php echo $item['tanggal']; ?></td>
+				<td><?php echo $item['status']; ?></td>
+				<td>
+				<a href="?controller=keranjang&action=pesananSelesai&id_penjualan=<?php echo $item['id_penjualan']; ?>"> <button class="btn btn-primary">Diterima</button></a>
+				</td>
+
+			</tr>
+			<?php
+			$no++;
+		}
 		
-	</div>
+		?>
+	</table>
+
+
+</div>
+<br><br><br>
 </body>
 </html>

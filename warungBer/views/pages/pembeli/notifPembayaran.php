@@ -2,6 +2,21 @@
 <html>
 <head>
 	<title></title>
+	
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="resources/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+
+<style type="text/css">
+	
+	#kotak{
+		background-color: white;
+		height: 1200px;
+		border-radius: 20px;
+		border: solid 1px orange;
+	}
+</style>
+
 </head>
 <body class="body-custom">
 <!-- =========================== -->
@@ -63,7 +78,13 @@
 
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="?controller=keranjang&action=showCart"><i class="glyphicon glyphicon-shopping-cart"></i></a></li>
-					<li><a href=""><i class="glyphicon glyphicon-envelope"></i></a></li>
+					<!-- <li><a href=""><i class="glyphicon glyphicon-envelope"></i></a></li> -->
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-envelope"></i><span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="?controller=registerAdmin&action=tampilDataPembeli">Transaksi</a></li>
+						</ul>
+					</li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['nama_user']; ?> <span class="caret"></span></a>
 						<ul class="dropdown-menu">
@@ -77,16 +98,30 @@
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
 	</nav>
-<!-- =========================== -->
+
+
+	<div class="pembatas"></div>
+	<div class="row">
 
 	<div class="container">
-		<div class="row">
-			<div class="col-md-9" style="margin: auto; text-align: center;">
-				<br><br>
-				<h2>Pesana Berhasil Dibuat</h2>
+		<div class="pembatas"></div>
+
+
+
+
+		<div class="container">
+			<div class="row" id="kotak">
+				<table>
+				<th>Subject</th>
+			<?php foreach ($notif as $item){?>
+				
+				<td><?php echo $item['notifikasi']; ?></td>
+
+				<?php } ?>
+				</table>
 			</div>
 		</div>
-		
-	</div>
-</body>
-</html>
+
+
+	</body>
+	</html>

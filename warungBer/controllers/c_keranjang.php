@@ -123,6 +123,11 @@ public function tampilBukti(){
 	$posts=Keranjang::tampilBukti($_GET['id_penjualan']);
 	require_once("views/pages/admin/buktiBayar.php");
 }
+
+public function pesananSelesai(){
+	$post=Keranjang::pesananSelesai($_GET['id_penjualan']);
+	header("location:index.php?controller=home&action=showTransaksiSelesai");
+}
 }
 
 ?>

@@ -55,8 +55,41 @@ Class HomeController{
 		else{
 			header('location:index.php?controller=login&action=login');
 		}
-		
-		
+	}
+
+		public function showTransaksiDikirim(){
+
+		if (isset($_SESSION['login_user'])) {
+			$posts=Home::showTransaksiDikirim($_SESSION['id_user']);
+			require_once('views/pages/pembeli/transaksiDikirim.php');
+		}
+
+		else{
+			header('location:index.php?controller=login&action=login');
+		}
+	}
+
+	public function showTransaksiSelesai(){
+
+		if (isset($_SESSION['login_user'])) {
+			$posts=Home::showTransaksiSelesai($_SESSION['id_user']);
+			require_once('views/pages/pembeli/transaksiSelesai.php');
+		}
+
+		else{
+			header('location:index.php?controller=login&action=login');
+		}
+	}
+
+	public function showNotif(){
+		if (isset($_SESSION['login_user'])) {
+			$notif=Home::notif();
+			require_once('views/pages/penjual/notifSaldo.php');
+		}
+
+		else{
+			header('location:index.php?controller=login&action=login');
+		}
 	}
 }
 ?>

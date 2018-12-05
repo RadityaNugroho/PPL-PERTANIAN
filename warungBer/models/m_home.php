@@ -7,7 +7,7 @@ Class Home {
 	public static function showTransaksiPembeli($id_user){
 		$list=[];
 		$db=DB::getInstance();
-		$req=$db->query("SELECT * from tb_penjualan where id_user=$id_user");
+		$req=$db->query("SELECT * from tb_penjualan where status = 'Terverifikasi' or status ='Belum Terverifikasi' and id_user=$id_user");
 
 		foreach ($req as $item) {
 			$list[]=array(
@@ -17,6 +17,20 @@ Class Home {
 				);
 		}
 		return $list;
+	}
+
+	public static function showTransaksiDikirim($id_user){
+		$db=DB::getInstance();
+		$req=$db->query("SELECT * from tb_penjualan where id_user=$id_user AND status = 'Dalam Pengiriman'");
+
+		return $req;
+	}
+
+	public static function showTransaksiSelesai($id_user){
+		$db=DB::getInstance();
+		$req=$db->query("SELECT * from tb_penjualan where id_user=$id_user AND status = 'Pesanan Diterima'");
+
+		return $req;
 	}
 
 	public static function showStat(){
@@ -95,6 +109,13 @@ Class Home {
 			);
 
 		 return $list;
+	}
+
+	public function notif(){
+		$db=DB::getInstance();
+		$req =$db->query("SELECT * from notifikasi where id_user=".$_SESSION['id_user']);
+
+		return $req;
 	}
 
 

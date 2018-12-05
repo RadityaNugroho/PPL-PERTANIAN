@@ -123,5 +123,10 @@
 		$posts = RegisterAdmin::saldoPetani($_GET['id_user'],$_POST['saldo']);
 		header("location:index.php?controller=registerAdmin&action=tampilDataPetani");
 	}
+
+	public function deleteHarga(){
+		$posts = RegisterAdmin::deleteDataHarga($_GET['id_harga']);
+		header("location:index.php?controller=registerAdmin&action=tampilHargaP");
+	}
 }
 ?>

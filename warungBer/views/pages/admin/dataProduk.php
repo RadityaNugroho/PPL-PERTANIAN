@@ -63,7 +63,7 @@
 								Oleh : <b><?php echo $item['penjual']; ?></b>
 
 							</p>
-							<a href="?controller=produk&action=detailProduk&id_produk=<?php echo $item['id_produk']; ?>" class="btn btn-primary">Lihat Detail</a>
+							<a href="?controller=produk&action=detailProduk&id_produk=<?php echo $item['id_produk']; ?>" class="btn btn-primary">Verifikasi Produk</a>
 						</div>
 					</div>
 				</div>

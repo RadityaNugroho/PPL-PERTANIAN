@@ -164,7 +164,7 @@ public function transaksiAdmin(){
 	$db = DB::getInstance();
 
 	$req = $db->query("SELECT id_penjualan,u.nama,tanggal,status from tb_penjualan o 
-		JOIN users u ON o.id_user=u.id_user");
+		JOIN users u ON o.id_user=u.id_user where status='Belum Terverifikasi'");
 
 foreach ($req as $item) {
 	$list[]=array(
@@ -248,6 +248,13 @@ public function tampilAlamat(){
 public function addBukti($id_penjualan, $bukti_transfer){
 	$db = DB::getInstance();
 	$req=$db->query("UPDATE tb_penjualan set bukti_transfer='$bukti_transfer' where id_penjualan=".$id_penjualan);
+
+	return $req;
+}
+
+public function pesananSelesai($id_penjualan){
+	$db = DB::getInstance();
+	$req = $db->query("UPDATE tb_penjualan set status='Pesanan Diterima' where id_penjualan=".$id_penjualan);
 
 	return $req;
 }

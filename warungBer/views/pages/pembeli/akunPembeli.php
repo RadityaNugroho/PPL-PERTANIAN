@@ -69,6 +69,7 @@
 						<ul class="dropdown-menu">
 							<li><a href="?controller=registerAdmin&action=tampilDataPembeli">Akun</a></li>
 							<li><a href="?controller=home&action=showTransaksiPembeli">Pesanan</a></li>
+              <li class="divider"></li>
 							<li><a href="logout.php">Logout</a></li>
 						</ul>
 					</li>

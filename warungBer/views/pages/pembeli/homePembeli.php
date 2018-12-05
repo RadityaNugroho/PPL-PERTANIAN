@@ -78,12 +78,19 @@
 
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="?controller=keranjang&action=showCart"><i class="glyphicon glyphicon-shopping-cart"></i></a></li>
-					<li><a href=""><i class="glyphicon glyphicon-envelope"></i></a></li>
+					<!-- <li><a href=""><i class="glyphicon glyphicon-envelope"></i></a></li> -->
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-envelope"></i><span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="?controller=registerAdmin&action=tampilDataPembeli">Transaksi</a></li>
+						</ul>
+					</li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['nama_user']; ?> <span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="?controller=registerAdmin&action=tampilDataPembeli">Akun</a></li>
 							<li><a href="?controller=home&action=showTransaksiPembeli">Pesanan</a></li>
+							<li class="divider"></li>
 							<li><a href="logout.php">Logout</a></li>
 						</ul>
 					</li>
@@ -95,32 +102,6 @@
 
 	<div class="pembatas"></div>
 	<div class="row">
-<!-- 		<div class="col-md-2"></div>
-		<div class="col-md-8">
-			<div id="myCarousel" class="carousel slide" data-ride="carousel"> -->
-				<!-- Indicators
-				<ol class="carousel-indicators">
-					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-					<li data-target="#myCarousel" data-slide-to="1"></li>
-					<li data-target="#myCarousel" data-slide-to="2"></li>
-				</ol>
-
-				
-				<div class="carousel-inner">
-					<div class="item active">
-						<img src="resources/img/bg3.jpg">
-						<div class="carousel-caption d-none d-md-block">
-				    	<h1>SELAMAT DATANG DI</h1>
-				    	<h1>WARUNG BERAS</h1>
-				    	<p>...</p>
-				  		</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-2"></div>
-
-	</div> -->
 
 	<div class="container">
 		<div class="pembatas"></div>
@@ -159,7 +140,5 @@
 				<?php } ?>
 			</div>
 		</div>
-
-
 	</body>
 	</html>

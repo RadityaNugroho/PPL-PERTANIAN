@@ -53,7 +53,7 @@
             <ul class="dropdown-menu">
               <li><a href="#">Produk</a></li>
               <li class="divider"></li>
-              <li><a href="?controller=home&action=showNotif">Saldo</a></li>
+              <li><a href="#">Saldo</a></li>
             </ul>
           </li>
 
@@ -75,52 +75,23 @@
 <div class="container" style="background-color: #b3ffff;">
   <div class="row">
     
-    <div class="col-md-4">
-  <div class="panel panel-default" style="border:none; border-radius: 5px 5px 10px 10px;">
-    <div class="panel-heading" style="background-color: #526485; border: none;">
-      <header class="panel-title">
-        <div class="text-center">
-          <strong style="color: white;">Profile</strong>
-        </div>
-      </header>
-    </div>
-    <div class="panel-body" style="background-color: #242D3E; border-radius: 0px 0px 10px 10px; border: none;">
-      <div class="text-center" id="author">
-        <br>
-        <img src="resources/img/petani.png" style="width: 190px; height: 180px;">
-        <br>
-        <h3 style="color: white;">Petani</h3>
-        <small class="label label-warning" style="color: white;"><?php echo $_SESSION['nama_user'];?></small>
-        <br><br>
-        <p><a href="?controller=registerAdmin&action=tampilDataUser" class="btn btn-primary" role="button">Detail Akun</a>
-        <br><br>
-        <p style="color: white;">Selamat Datang Petani</p>
-      </div>
-    </div>
-  </div>
-</div>
 
-    <div class="col-md-7" id="bg">
-      
-        <?php foreach ($stat as $item){
-
-         ?>
-              <label>Total Produk Anda Yang Terjual</label>
-              <h3 class="count" style="color: black;"><?php echo $item['terjual']." Kilogram"; ?></h3>
-              <hr>
-
-              <label>Total Stok Produk Anda</label>
-              <h3 class="count2" style="color: black;"><?php echo $item['jumlah_stok']." Kilogram"; ?></h3>
-              <hr>
-
-              <label>Produk Yang Sering Dibeli Konsumen</label>
-              <h3 class="count4" style="color: black;"><?php echo $item['nama_produk']; ?></h3>
-              <hr>
-
-              <label>Saldo Anda</label>
-              <h3 class="count4" style="color: black;">Rp.</h3>
-
-            <?php } ?>
+    <div class="col-md-10" id="bg">
+    <table>
+    	<tr>
+    	<th>Tanggal</th>
+		<th>Subject</th>
+		<th>Notifikasi</th>
+		</tr>
+			<?php foreach ($notif as $item){?>
+				<tr>
+				<td><?php echo $item['tanggal']; ?></td>
+				<td><?php echo $item['subject']; ?></td>
+				<td><?php echo $item['notifikasi']; ?></td>
+				</tr>
+			<?php } ?>
+	</table>
+        
     </div>
 
   </div>

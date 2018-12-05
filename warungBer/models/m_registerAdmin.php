@@ -129,7 +129,7 @@ public function Komen($id_produk,$id_user,$diskusi){
 
 public function notifikasi($id_user,$subject,$notifikasi){
 	$db = DB::getInstance();
-	$req = $db->query("INSERT INTO notifikasi VALUES(NULL,'".$id_user."','".$subject."','".$notifikasi."')");
+	$req = $db->query("INSERT INTO notifikasi VALUES(NULL,'".$id_user."','".$subject."','".$notifikasi."',curdate())");
 
 	return $req;
 }
@@ -140,6 +140,13 @@ public function saldoPetani($id_user, $saldo){
 
 	return $req;
 }
+
+public static function deleteDataHarga($id_harga){
+		$db = DB::getInstance();
+		$req = $db->query("DELETE from harga_pasar where id_harga='$id_harga'");
+
+		return $req;
+	}
 }
 
 ?>
