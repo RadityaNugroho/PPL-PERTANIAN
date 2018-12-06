@@ -128,6 +128,39 @@ public function pesananSelesai(){
 	$post=Keranjang::pesananSelesai($_GET['id_penjualan']);
 	header("location:index.php?controller=home&action=showTransaksiSelesai");
 }
+
+public function komplain(){
+	$post=Keranjang::komplain($_GET['id_penjualan'],$_SESSION['id_user'],$_POST['no_telp'],$_POST['komplain']);
+
+	header("location:index.php?controller=home&action=showTransaksiSelesai");
+}
+
+public function inputKomplain(){
+	$post=Keranjang::tampilPesanan($_GET['id_penjualan']);
+	require_once("views/pages/pembeli/komplain.php");
+}
+
+public function tampilKomplain(){
+	 $post=Keranjang::tampilKomplain();
+	require_once("views/pages/penjual/komplain.php");
+}
+
+public function tampilSaldo(){
+	$post=Keranjang::tampilDana();
+	require_once("views/pages/penjual/saldoMasuk.php");
+}
+
+public function tampilHargaP(){
+		if (isset($_SESSION['login_user'])) {
+			$posts=Keranjang::tampilHargaPasar();
+			require_once("views/pages/penjual/hargaPasar.php");
+		}
+
+		else{
+			header('location:index.php?controller=login&action=login');
+		}
+
+	}
 }
 
 ?>

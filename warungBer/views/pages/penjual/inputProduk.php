@@ -34,7 +34,9 @@
 						</ul>
 					</li>
 					<li><a href="?controller=keranjang&action=transaksiPenjual">Pesanan</a></li>
-
+					<li><a href="?controller=keranjang&action=tampilSaldo">Dana Masuk</a></li>
+					<li><a href="?controller=keranjang&action=tampilHargaP">Harga Pasar</a></li>
+          			<li><a href="?controller=keranjang&action=tampilKomplain">Komplain Konsumen</a></li>
 				</ul>
 				
 				<ul class="nav navbar-nav navbar-right">

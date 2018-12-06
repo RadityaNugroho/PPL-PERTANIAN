@@ -3,7 +3,7 @@
 <head>
 	<title></title>
 </head>
-<body>
+<body class="body-custom">
 <!-- =========================== -->
 	<div class="bgded" style="background-image:url('resources/img/fild.jpg');">
 
@@ -69,7 +69,7 @@
 						<ul class="dropdown-menu">
 							<li><a href="?controller=registerAdmin&action=tampilDataPembeli">Akun</a></li>
 							<li><a href="?controller=home&action=showTransaksiPembeli">Pesanan</a></li>
-							<li class="divider"></li>
+              <li class="divider"></li>
 							<li><a href="logout.php">Logout</a></li>
 						</ul>
 					</li>
@@ -78,54 +78,32 @@
 		</div><!-- /.container-fluid -->
 	</nav>
 <!-- =========================== -->
+
 	<div class="container">
-	<div style="background-color: white;"> 
-	<ul class="nav nav-pills nav-justified">
-    <li class="nav-item">
-      <a class="nav-link" href="?controller=home&action=showTransaksiPembeli">Pesanan Masuk</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="?controller=home&action=showTransaksiDikirim">Dalam Pengiriman</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="?controller=home&action=showTransaksiSelesai">Pesanan Selesai</a>
-    </li>
-  </ul>
-</div><br>
-		<table class="table" style="margin-top: 30px;">
+    <br><br><br>
 
-			<tr>
-
-				<th>No</th>
-				<th>id Transaksi</th>
-				<th>tanggal</th>
-				<th>status</th>
-				<th>action</th>
-			</tr>
-
-			<?php 
-			$no=1;
-			foreach ($posts as $item) { ?>
-			<tr>
-				<td><?php echo $no; ?></td>
-
-				<td><?php echo $item['id_penjualan']; ?></td>
-				<td><?php echo $item['tanggal']; ?></td>
-				<td><?php echo $item['status']; ?></td>
-				<td>
-				<a href="?controller=keranjang&action=inputKomplain&id_penjualan=<?php echo $item['id_penjualan']; ?>"> <button class="btn btn-primary">Complain</button></a>
-				</td>
-
-			</tr>
-			<?php
-			$no++;
-		}
-		
-		?>
-	</table>
-
-
+      <?php
+      foreach ($post as $item) { ?>
+<div class="col-md-5">
+	<form method="POST" class="form">
+		<input type="hidden" name="controller" value="keranjang">
+		<input type="hidden" name="action" value="komplain">
+	<label>No telepon</label>
+     <input type="text" name="no_telp" class="form-control">
+     <br>
+     <label>Masukan Komplain</label>
+     <div class="input-group">
+              <textarea style="width:450px; height:100px;" name="komplain" type="text" class="form-control" placeholder="Masukkan Komplain Anda Kepada Petani" aria-describedby="basic-addon1"
+              required></textarea>
+            </div>
+     <p align="right">
+	 <button type="submit" class="btn btn-success" style="margin-top:20px;">Kirim Komplain</button>
+	</p>
+</form>
 </div>
-<br><br><br>
+      
+
+      <?php
+    }?>
 </body>
 </html>

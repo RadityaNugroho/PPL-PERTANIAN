@@ -79,16 +79,21 @@ Class Home {
 		$terjual;
 		$jumlah_stok;
 		$nama_produk;
+		$saldo;
 		$db = DB::getInstance();
 
 		$req = $db->query("SELECT SUM(jumlah) AS terjual
 			from detail_penjualan dp JOIN produk p ON dp.id_produk=p.id_produk
 			GROUP BY Month(tanggal)");
+
 		$req2 = $db->query("SELECT sum(jumlah_stok) as jumlah_stok FROM produk");
+
 		$req3 = $db->query("SELECT p.nama_produk FROM detail_penjualan dp
 			JOIN produk p on dp.id_produk=p.id_produk
 			GROUP by dp.id_produk,Month(dp.tanggal)
 			order by dp.jumlah desc LIMIT 0,1");
+		
+		$req4 = $db->query("SELECT sum(saldo) as saldo from saldo where id_user='".$_SESSION['id_user']."'");
 
 		foreach ($req->fetchAll() as $post) {
 			$terjual = $post['terjual'];
@@ -99,12 +104,16 @@ Class Home {
 		foreach ($req3->fetchAll() as $post) {
 			$nama_produk = $post['nama_produk'];
 		}
+		foreach ($req4->fetchAll as $post) {
+			$saldo = $post['saldo'];
+		}
 
 		 $list[]=array(
 
 			'jumlahTerjual'=>$terjual,
 			'jumlah_stok'=>$jumlah_stok,
-			'produkTerlaris'=>$nama_produk
+			'produkTerlaris'=>$nama_produk,
+			'saldo'=>$saldo
 
 			);
 

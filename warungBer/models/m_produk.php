@@ -14,7 +14,7 @@ Class Produk{
 
 		$req = $db->query("SELECT *
 			FROM produk p join users u
-			ON p.id_user=u.id_user");
+			ON p.id_user=u.id_user where p.status='Terverifikasi'");
 
 foreach ($req as $item) {
 	$list[]=array(
@@ -99,7 +99,7 @@ public static function showAllProdukPenjual($id_user){
 		$db = DB::getInstance();
 		$tes = $_SESSION["id_user"];
 		$req = $db->query("INSERT INTO produk
-			VALUES (NULL,'".$tes."', '".$nama_produk."', '".$jumlah_stok."', '".$harga."', '".$foto_produk."', '".$deskripsi."');
+			VALUES (NULL,'".$tes."', '".$nama_produk."', '".$jumlah_stok."', '".$harga."', '".$foto_produk."', '".$deskripsi."','Belum Terverifikasi');
 			");
 
 		return $req;

@@ -26,7 +26,7 @@
 					<li><a href="?controller=registerAdmin&action=tampilDataPetani">Data Petani</a></li>
 					<li><a href="?controller=registerAdmin&action=tampilProduk">Produk Petani</a></li>
           			<li  class="active"><a href="?controller=keranjang&action=transaksiAdmin">Pembayaran</a></li>
-					<li><a >Harga Pasar</a></li>
+										<li><a href="?controller=registerAdmin&action=tampilHargaP">Harga Pasar</a></li>
 					
 				</ul>
 				

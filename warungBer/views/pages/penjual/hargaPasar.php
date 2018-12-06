@@ -32,7 +32,7 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="?controller=home&action=homePenjual">Home <span class="sr-only">(current)</span></a></li>
+					<li><a href="?controller=home&action=homePenjual">Home <span class="sr-only">(current)</span></a></li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kelola produk<span class="caret"></span></a>
 						<ul class="dropdown-menu">
@@ -43,8 +43,9 @@
 						 </ul>
 					</li>
           <li><a href="?controller=keranjang&action=transaksiPenjual">Pesanan</a></li>
-          <li><a href="?controller=keranjang&action=tampilHargaP">Harga Pasar</a></li>
-          			<li><a href="?controller=keranjang&action=tampilKomplain">Komplain Konsumen</a></li>
+          <li><a href="?controller=keranjang&action=tampilSaldo">Dana Masuk</a></li>
+          <li class="active"><a href="?controller=keranjang&action=tampilHargaP">Harga Pasar</a></li>
+          <li><a href="?controller=keranjang&action=tampilKomplain">Komplain Konsumen</a></li>
            
         </ul>
 				
@@ -55,7 +56,7 @@
             <ul class="dropdown-menu">
               <li><a href="#">Produk</a></li>
               <li class="divider"></li>
-              <li><a href="#">Saldo</a></li>
+              <li><a href="?controller=home&action=showNotif">Saldo</a></li>
             </ul>
           </li>
 
@@ -77,29 +78,37 @@
 <div class="container" style="background-color: #b3ffff;">
   <div class="row">
     
+    <table class="table" style="margin-top: 30px;">
 
-    <div class="col-md-10" id="bg">
-    <table>
-    	<tr>
-    	<th>Tanggal</th>
-		<th>Subject</th>
-		<th>Notifikasi</th>
-		</tr>
-			<?php foreach ($notif as $item){?>
-				<tr>
-				<td><?php echo $item['tanggal']; ?></td>
-				<td><?php echo $item['subject']; ?></td>
-				<td><?php echo $item['notifikasi']; ?></td>
-				</tr>
-			<?php } ?>
-	</table>
-        
-    </div>
+      <tr>
+        <th>No</th>
+        <th>Tanggal</th>
+        <th>Harga Pemerintah</th>
+        <th>Harga Beli</th>
+        <th>Harga Jual</th>
+        <th>Jenis Beras</th>
+      </tr>
 
-  </div>
-</div>
+      <?php 
+      $no=1;
+      foreach ($posts as $item) { ?>
+      <tr>
+        <td><?php echo $no; ?></td>
+        <td><?php echo $item['tanggal']; ?></td>
+        <td><?php echo "Rp ". number_format($item['h_pemerintah'],0,".",".") ; ?></td>
+        <td><?php echo "Rp ". number_format($item['h_beli'],0,".",".") ; ?></td>
+        <td><?php echo "Rp ". number_format($item['h_jual'],0,".",".") ; ?></td>
+        <td><?php echo $item['jenis']; ?></td>
+
+      </tr>
+      <?php
+      $no++;
+    }
+       ?>
+  </table>
 	
 
+  </div>
 </div>
 
 

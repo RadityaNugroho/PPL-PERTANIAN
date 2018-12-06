@@ -128,5 +128,11 @@
 		$posts = RegisterAdmin::deleteDataHarga($_GET['id_harga']);
 		header("location:index.php?controller=registerAdmin&action=tampilHargaP");
 	}
+
+	public function aprovProduk(){
+		$post = RegisterAdmin::aprovProduk($_GET['id_produk']);
+		header("location:index.php?controller=registerAdmin&action=tampilProduk");
+	}
+
 }
 ?>

@@ -26,7 +26,7 @@
 					<li><a href="?controller=registerAdmin&action=tampilDataPetani">Data Petani</a></li>
 					<li class="active"><a>Produk Petani</a></li>
           			<li ><a href="?controller=keranjang&action=transaksiAdmin">Pembayaran</a></li>
-					<li><a >Harga Pasar</a></li>
+										<li><a href="?controller=registerAdmin&action=tampilHargaP">Harga Pasar</a></li>
 					
 				</ul>
 				
@@ -59,11 +59,12 @@
 							</p>
 							<p class="card-text">
 
-								Stok : <b><?php echo $item['jumlah_stok']." "; ?>Kg</b> <br>
-								Oleh : <b><?php echo $item['penjual']; ?></b>
+								Stok   : <b><?php echo $item['jumlah_stok']." "; ?>Kg</b> <br>
+								Oleh   : <b><?php echo $item['penjual']; ?></b><br>
+								Status : <b><?php echo $item['status']; ?></b>
 
 							</p>
-							<a href="?controller=produk&action=detailProduk&id_produk=<?php echo $item['id_produk']; ?>" class="btn btn-primary">Verifikasi Produk</a>
+							<a href="?controller=registerAdmin&action=aprovProduk&id_produk=<?php echo $item['id_produk']; ?>" class="btn btn-primary">Verifikasi Produk</a>
 						</div>
 					</div>
 				</div>

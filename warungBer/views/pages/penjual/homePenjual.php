@@ -43,6 +43,9 @@
 						 </ul>
 					</li>
           <li><a href="?controller=keranjang&action=transaksiPenjual">Pesanan</a></li>
+          <li><a href="?controller=keranjang&action=tampilSaldo">Dana Masuk</a></li>
+          <li><a href="?controller=keranjang&action=tampilHargaP">Harga Pasar</a></li>
+          <li><a href="?controller=keranjang&action=tampilKomplain">Komplain Konsumen</a></li>
            
         </ul>
 				
@@ -118,7 +121,7 @@
               <hr>
 
               <label>Saldo Anda</label>
-              <h3 class="count4" style="color: black;">Rp.</h3>
+              <h3 class="count4" style="color: black;"><?php echo "Rp ". number_format($item['saldo'],0,".",".") ; ?></h3>
 
             <?php } ?>
     </div>

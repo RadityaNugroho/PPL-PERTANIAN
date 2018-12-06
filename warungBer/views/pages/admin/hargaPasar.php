@@ -25,7 +25,7 @@
           <li><a>Data Petani</a></li>
           <li><a href="?controller=registerAdmin&action=tampilProduk">Produk Petani</a></li>
                 <li ><a href="?controller=keranjang&action=transaksiAdmin">Pembayaran</a></li>
-          <li class="active"><a >Harga Pasar</a></li>
+                   <li class="active"><a href="?controller=registerAdmin&action=tampilHargaP">Harga Pasar</a></li>
           
         </ul>
         
@@ -108,9 +108,9 @@
       <tr>
         <td><?php echo $no; ?></td>
         <td><?php echo $item['tanggal']; ?></td>
-        <td><?php echo $item['h_pemerintah']; ?></td>
-        <td><?php echo $item['h_beli']; ?></td>
-        <td><?php echo $item['h_jual']; ?></td>
+        <td><?php echo "Rp ". number_format($item['h_pemerintah'],0,".",".") ; ?></td>
+        <td><?php echo "Rp ". number_format($item['h_beli'],0,".",".") ; ?></td>
+        <td><?php echo "Rp ". number_format($item['h_jual'],0,".",".") ; ?></td>
         <td><?php echo $item['jenis']; ?></td>
         <td><a href="?controller=registerAdmin&action=deleteHarga&id_harga=<?php echo$item['id_harga']; ?>" class="btn btn-danger">Delete</a></td>
 

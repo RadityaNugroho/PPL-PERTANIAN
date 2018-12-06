@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>simatrix</title>
+	<title></title>
 
 
 
@@ -33,6 +33,9 @@
 						</ul>
 					</li>
 					<li class="active"><a href="?controller=keranjang&action=transaksiPenjual">Pesanan</a></li>
+					<li><a href="?controller=keranjang&action=tampilSaldo">Dana Masuk</a></li>
+					<li><a href="?controller=keranjang&action=tampilHargaP">Harga Pasar</a></li>
+          			<li><a href="?controller=keranjang&action=tampilKomplain">Komplain Konsumen</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 
@@ -50,7 +53,7 @@
 	</nav>
 
 	<div class="container">
-  <ul class="nav nav-pills nav-justified">
+  <!-- <ul class="nav nav-pills nav-justified">
     <li class="nav-item">
       <a class="nav-link active" href="#">Pesanan Masuk</a>
     </li>
@@ -60,7 +63,7 @@
     <li class="nav-item">
       <a class="nav-link" href="#">Pesanan Selesai</a>
     </li>
-  </ul><br>
+  </ul> --><br>
 		<h1>Order masuk</h1>
 		<table class="table" style="margin-top: 30px;">
 
@@ -113,10 +116,7 @@
 					$i++;
 					$totalBayar+=$totalHarga;
 				}
-
-
 				?>
-
 
 			</table>
 			<div>

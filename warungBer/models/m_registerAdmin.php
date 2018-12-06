@@ -73,6 +73,7 @@ foreach ($req as $item) {
 		'id_user'=>$item['id_user'],
 		'jumlah_stok'=>$item['jumlah_stok'],
 		'harga'=>$item['harga'],
+		'status'=>$item['status'],
 		'foto_produk'=>$item['foto_produk'],
 		'deskripsi'=>$item['deskripsi'],
 		'penjual'=>$item['nama']
@@ -147,6 +148,13 @@ public static function deleteDataHarga($id_harga){
 
 		return $req;
 	}
+
+public function aprovProduk($id_produk){
+	$db = DB::getInstance();
+	$req = $db->query("UPDATE produk set status='Terverifikasi' where id_produk='$id_produk'");
+
+	return $req;
+}
 }
 
 ?>

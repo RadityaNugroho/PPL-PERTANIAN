@@ -258,6 +258,56 @@ public function pesananSelesai($id_penjualan){
 
 	return $req;
 }
+
+public function komplain($id_penjualan,$id_user,$no_telp,$komplain){
+	$db = DB::getInstance();
+	$req = $db->query("INSERT INTO komplain VALUES(NULL,'".$id_penjualan."','".$id_user."','".$no_telp."','".$komplain."',curdate())");
+
+	return $req;
+}
+
+public function tampilPesanan($id_penjualan){
+	$db = DB::getInstance();
+	$req = $db->query("SELECT * FROM tb_penjualan where status='Pesanan Diterima' and id_penjualan=".$id_penjualan);
+
+	return $req;
+}
+
+public function tampilKomplain(){
+	$db = DB::getInstance();
+	$req = $db->query("SELECT k.tanggal,k.no_telp,k.komplain,p.nama_produk,
+	(SELECT u.nama FROM tb_penjualan o JOIN users u ON o.id_user=u.id_user WHERE id_penjualan=dp.id_penjualan) as konsumen  
+	from komplain k join tb_penjualan tp on k.id_penjualan=tp.id_penjualan 
+		join detail_penjualan dp on tp.id_penjualan=dp.id_penjualan join produk p on dp.id_produk=p.id_produk join users u on p.id_user=u.id_user where p.id_user='".$_SESSION['id_user']."'");
+
+	return $req;
+
+	foreach ($req as $item) {
+	$list[]=array(
+		
+		'tanggal'=>$item['tanggal'],
+		'no_telp'=>$item['no_telp'],
+		'konsumen'=>$item['konsumen'],
+		'nama_produk'=>$item['nama_produk'],
+		'komplain'=>$item['komplain']
+
+		);
+}
+}
+public function tampilDana(){
+	$db = DB::getInstance();
+	$req = $db->query("SELECT * from saldo where id_user='".$_SESSION['id_user']."'");
+
+	return $req;
+}
+
+public static function tampilHargaPasar(){
+	$db = DB::getInstance();
+	$req = $db->query("SELECT * from harga_pasar");
+
+	return $req;
+}
+
 }
 
 ?>
