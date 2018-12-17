@@ -52,6 +52,7 @@ Class Home {
 			where p.id_user=".$_SESSION['id_user']."
 			GROUP by dp.id_produk,Month(dp.tanggal)
 			order by jumlah  desc LIMIT 0,1");
+		$req4 = $db->query("SELECT SUM(saldo) as saldo from saldo where id_user=".$_SESSION['id_user']);
 
 		foreach ($req->fetchAll() as $post) {
 			$terjual = $post['terjual'];
@@ -62,12 +63,16 @@ Class Home {
 		foreach ($req3->fetchAll() as $post) {
 			$nama_produk = $post['nama_produk'];
 		}
+		foreach ($req3->fetchAll() as $post) {
+			$saldo = $post['saldo'];
+		}
 
 		 $list[]=array(
 
 			'terjual'=>$terjual,
 			'jumlah_stok'=>$jumlah_stok,
-			'nama_produk'=>$nama_produk
+			'nama_produk'=>$nama_produk,
+			'saldo'=>$saldo
 
 			);
 
@@ -122,7 +127,21 @@ Class Home {
 
 	public function notif(){
 		$db=DB::getInstance();
-		$req =$db->query("SELECT * from notifikasi where id_user=".$_SESSION['id_user']);
+		$req =$db->query("SELECT * from notifikasi where subject='saldo' and id_user=".$_SESSION['id_user']);
+
+		return $req;
+	}
+
+	public function notifProduk(){
+		$db=DB::getInstance();
+		$req =$db->query("SELECT * from notifikasi where subject='produk' and id_user=".$_SESSION['id_user']);
+
+		return $req;
+	}
+
+	public function showKomplain(){
+		$db=DB::getInstance();
+		$req =$db->query("SELECT * from komplain where id_user=".$_SESSION['id_user']);
 
 		return $req;
 	}

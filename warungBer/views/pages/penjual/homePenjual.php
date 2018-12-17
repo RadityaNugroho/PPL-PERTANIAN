@@ -54,7 +54,7 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-envelope"></i><span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Produk</a></li>
+              <li><a href="?controller=home&action=showNotifProduk">Produk</a></li>
               <li class="divider"></li>
               <li><a href="?controller=home&action=showNotif">Saldo</a></li>
             </ul>

@@ -155,6 +155,13 @@ public function aprovProduk($id_produk){
 
 	return $req;
 }
+
+// public function notifProduk(){
+// 	$db = DB::getInstance();
+// 	$req = $db->query("INSERT INTO notifikasi VALUES(NULL,'".$id_user."','".$subject."','".$notifikasi."',curdate())");
+
+// 	return $req;
+// }
 }
 
 ?>

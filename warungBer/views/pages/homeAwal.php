@@ -51,7 +51,7 @@
     </article>
 </div>
 </div>
-<marquee> HARGA PASAR </marquee>
+
 <!-- =============== -->
 <div class="wrapper row3">
   <main class="hoc container clear">

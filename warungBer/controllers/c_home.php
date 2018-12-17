@@ -91,5 +91,27 @@ Class HomeController{
 			header('location:index.php?controller=login&action=login');
 		}
 	}
+
+		public function showNotifProduk(){
+		if (isset($_SESSION['login_user'])) {
+			$notif=Home::notifProduk();
+			require_once('views/pages/penjual/notifProduk.php');
+		}
+
+		else{
+			header('location:index.php?controller=login&action=login');
+		}
+	}
+	public function showKomplain(){
+		if (isset($_SESSION['login_user'])) {
+			$posts=Home::showKomplain();
+			require_once('views/pages/pembeli/showKomplain.php');
+		}
+
+		else{
+			header('location:index.php?controller=login&action=login');
+		}
+	}
+
 }
 ?>

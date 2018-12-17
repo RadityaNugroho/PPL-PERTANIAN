@@ -69,7 +69,7 @@
 						<ul class="dropdown-menu">
 							<li><a href="?controller=registerAdmin&action=tampilDataPembeli">Akun</a></li>
 							<li><a href="?controller=home&action=showTransaksiPembeli">Pesanan</a></li>
-							<li><a href="?controller=home&action=showKomplain">Komplain</a></li>
+              <li><a href="?controller=home&action=showKomplain">Komplain</a></li>
               <li class="divider"></li>
 							<li><a href="logout.php">Logout</a></li>
 						</ul>
@@ -81,30 +81,26 @@
 <!-- =========================== -->
 
 	<div class="container">
-    <br><br><br>
+    <table>
+    	<tr>
+    		<th>No Pesanan</th>
+    		<th>Tanggal Komplain</th>
+    		<th>Deskripsi Komplain</th>
+    	</tr>
+    	<?php
+      foreach ($posts as $item) { ?>
+    	<tr>
+    		<td><?php echo $item['id_penjualan']; ?></td>
+    		<td><?php echo $item['tanggal'] ?></td>
+    		<td><?php echo $item['komplain'] ?></td>
+    	</tr>
+    	 <?php
+    }?>
+    </table>
 
-      <?php
-      foreach ($post as $item) { ?>
-<div class="col-md-5">
-	<form method="POST" class="form">
-		<input type="hidden" name="controller" value="keranjang">
-		<input type="hidden" name="action" value="komplain">
-	<label>No telepon</label>
-     <input type="text" name="no_telp" class="form-control">
-     <br>
-     <label>Masukan Komplain</label>
-     <div class="input-group">
-              <textarea style="width:450px; height:100px;" name="komplain" type="text" class="form-control" placeholder="Masukkan Komplain Anda Kepada Petani" aria-describedby="basic-addon1"
-              required></textarea>
-            </div>
-     <p align="right">
-	 <button type="submit" class="btn btn-success" style="margin-top:20px;">Kirim Komplain</button>
-	</p>
-</form>
-</div>
+      
       
 
-      <?php
-    }?>
+     
 </body>
 </html>

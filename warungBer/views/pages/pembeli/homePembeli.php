@@ -69,10 +69,6 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="?controller=home&action=homePembeli">Home <span class="sr-only">(current)</span></a></li>
-
-					<!-- <li><a href="?controller=keranjang&action=showCart">Keranjang</a></li> -->
-					<!-- <li><a href="?controller=home&action=showTransaksiPembeli">Transaksi</a></li> -->
-					<!-- <li><a href="?controller=home&action=pembayaran">Tes</a></li> -->
 					
 				</ul>
 
@@ -90,6 +86,7 @@
 						<ul class="dropdown-menu">
 							<li><a href="?controller=registerAdmin&action=tampilDataPembeli">Akun</a></li>
 							<li><a href="?controller=home&action=showTransaksiPembeli">Pesanan</a></li>
+							<li><a href="?controller=home&action=showKomplain">Komplain</a></li>
 							<li class="divider"></li>
 							<li><a href="logout.php">Logout</a></li>
 						</ul>
